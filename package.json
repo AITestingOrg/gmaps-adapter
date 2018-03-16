@@ -1,0 +1,22 @@
+{
+  "name": "gmaps-adapter",
+  "version": "1.0.0",
+  "description": "google maps API adapter",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node src/app.js"
+  },
+  "keywords": [
+    "google",
+    "maps",
+    "trip"
+  ],
+  "author": "Ivette, Gabriel, David",
+  "license": "ISC",
+  "dependencies": {
+    "@google/maps": "^0.4.5",
+    "restify": "^6.3.4",
+    "restify-plugins": "^1.6.0"
+  }
+}
