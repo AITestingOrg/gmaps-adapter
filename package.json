@@ -18,5 +18,6 @@
     "@google/maps": "^0.4.5",
     "restify": "^6.3.4",
     "restify-plugins": "^1.6.0"
-  }
+  },
+  "repository": "github:AITestingOrg/gmaps-adapter"
 }
