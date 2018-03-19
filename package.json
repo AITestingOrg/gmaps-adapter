@@ -1,0 +1,28 @@
+{
+  "name": "gmaps-adapter",
+  "version": "1.0.0",
+  "description": "google maps API adapter",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start": "node src/app.js"
+  },
+  "keywords": [
+    "google",
+    "maps",
+    "trip"
+  ],
+  "author": "Gabriel Clark <gaboperezclark@gmail.com>",
+  "contributors": [
+    "Ivette Duran <ivette_duran@ultimatesoftware.com>",
+    "David Giles <david_giles@ultimatesoftware.com>"
+],
+  "license": "MIT",
+  "dependencies": {
+    "@google/maps": "^0.4.5",
+    "npm": "^5.7.1",
+    "restify": "^6.3.4",
+    "restify-plugins": "^1.6.0"
+  },
+  "repository": "github:AITestingOrg/gmaps-adapter"
+}
