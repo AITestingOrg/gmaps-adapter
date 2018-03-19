@@ -12,8 +12,12 @@
     "maps",
     "trip"
   ],
-  "author": "Ivette, Gabriel, David",
-  "license": "ISC",
+  "author": "Gabriel Clark <gaboperezclark@gmail.com>",
+  "contributors": [
+    "Ivette Duran <ivette_duran@ultimatesoftware.com>",
+    "David Giles <david_giles@ultimatesoftware.com>"
+],
+  "license": "MIT",
   "dependencies": {
     "@google/maps": "^0.4.5",
     "npm": "^5.7.1",

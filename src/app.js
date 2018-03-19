@@ -1,11 +1,11 @@
-var restify = require('restify');
+const restify = require('restify');
+const app = restify.createServer();
+const routes = require('./routes/gmaps-directions.js');
+const port = process.env.PORT || 8080;
 
-var app = restify.createServer();
 app.use(restify.plugins.bodyParser());
-
-var routes = require('./routes/gmaps-directions.js');
 routes(app);
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log('%s listening at %s', app.name, app.url);
 });

@@ -1,10 +1,11 @@
 'use strict'
 
-var googleMapsClient = require('@google/maps').createClient({
+const parser = require('./../parser/direction-parser.js');
+const googleMapsClient = require('@google/maps').createClient({
   key: 'AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY'
 });
 
-var directions = (req, res) => {
+const directions = (req, res) => {
   googleMapsClient.directions(req.body, 
     (err, response) => {
       if(!err) {
