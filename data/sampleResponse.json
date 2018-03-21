@@ -1,0 +1,357 @@
+{
+    "status": 200,
+    "headers": {
+        "content-type": "application/json; charset=UTF-8",
+        "date": "Mon, 19 Mar 2018 15:04:11 GMT",
+        "expires": "Mon, 19 Mar 2018 15:04:41 GMT",
+        "cache-control": "public, max-age=30",
+        "server": "mafe",
+        "x-xss-protection": "1; mode=block",
+        "x-frame-options": "SAMEORIGIN",
+        "alt-svc": "hq=\":443\"; ma=2592000; quic=51303431; quic=51303339; quic=51303335,quic=\":443\"; ma=2592000; v=\"41,39,35\"",
+        "accept-ranges": "none",
+        "vary": "Accept-Language,Accept-Encoding",
+        "connection": "close"
+    },
+    "json": {
+        "geocoded_waypoints": [
+            {
+                "geocoder_status": "OK",
+                "place_id": "ChIJR8dqkZGg2YgR6Je5A0O39Ik",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            },
+            {
+                "geocoder_status": "OK",
+                "place_id": "ChIJbw0_OX272YgR4-dy1EwCwDs",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            }
+        ],
+        "routes": [
+            {
+                "bounds": {
+                    "northeast": {
+                        "lat": 26.1005828,
+                        "lng": -80.3069178
+                    },
+                    "southwest": {
+                        "lat": 25.9087002,
+                        "lng": -80.4029243
+                    }
+                },
+                "copyrights": "Map data ©2018 Google",
+                "legs": [
+                    {
+                        "distance": {
+                            "text": "19.8 mi",
+                            "value": 31812
+                        },
+                        "duration": {
+                            "text": "36 mins",
+                            "value": 2157
+                        },
+                        "duration_in_traffic": {
+                            "text": "37 mins",
+                            "value": 2238
+                        },
+                        "end_address": "Miami Lakes, FL, USA",
+                        "end_location": {
+                            "lat": 25.9087002,
+                            "lng": -80.30866120000002
+                        },
+                        "start_address": "Weston, FL, USA",
+                        "start_location": {
+                            "lat": 26.1003482,
+                            "lng": -80.39981519999999
+                        },
+                        "steps": [
+                            {
+                                "distance": {
+                                    "text": "98 ft",
+                                    "value": 30
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 3
+                                },
+                                "end_location": {
+                                    "lat": 26.1005828,
+                                    "lng": -80.3999676
+                                },
+                                "html_instructions": "Head <b>northwest</b> on <b>Eagle Run Dr</b> toward <b>Golf View Dr</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+                                "polyline": {
+                                    "points": "evh~CzaviNOFQHKJ"
+                                },
+                                "start_location": {
+                                    "lat": 26.1003482,
+                                    "lng": -80.39981519999999
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "0.5 mi",
+                                    "value": 798
+                                },
+                                "duration": {
+                                    "text": "2 mins",
+                                    "value": 91
+                                },
+                                "end_location": {
+                                    "lat": 26.094749,
+                                    "lng": -80.40288989999999
+                                },
+                                "html_instructions": "Turn <b>left</b> onto <b>Golf View Dr</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+                                "maneuver": "turn-left",
+                                "polyline": {
+                                    "points": "swh~CxbviNt@lBNZ\\f@XVVR\\T`@NVJZH^BXD\\?f@CZE`@G\\G^InB]\\IRCRAX?Z?TD\\FVFXL^XHHLJLNJRNTJXPf@N`@LZl@p@LJZNTHh@N"
+                                },
+                                "start_location": {
+                                    "lat": 26.1005828,
+                                    "lng": -80.3999676
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "0.9 mi",
+                                    "value": 1451
+                                },
+                                "duration": {
+                                    "text": "2 mins",
+                                    "value": 117
+                                },
+                                "end_location": {
+                                    "lat": 26.0867021,
+                                    "lng": -80.393997
+                                },
+                                "html_instructions": "Turn <b>left</b> onto <b>Weston Hills Dr</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+                                "maneuver": "turn-left",
+                                "polyline": {
+                                    "points": "esg~C`uviNPDZaA\\_An@}Ah@{@d@g@`@[~@k@n@Yx@Uj@Kf@Gd@E~@?dAHvAH|@Bt@Ad@G^I`@M`@Qj@a@p@q@LOR_@N]Pi@H]Fc@Fw@CuAAm@IuDAcAFaANo@F[HQTg@^k@Z_@j@o@h@g@b@a@|@{@x@y@bA}@"
+                                },
+                                "start_location": {
+                                    "lat": 26.094749,
+                                    "lng": -80.40288989999999
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "0.8 mi",
+                                    "value": 1333
+                                },
+                                "duration": {
+                                    "text": "2 mins",
+                                    "value": 114
+                                },
+                                "end_location": {
+                                    "lat": 26.095564,
+                                    "lng": -80.38670549999999
+                                },
+                                "html_instructions": "Turn <b>left</b> onto <b>Weston Hills Blvd</b><div style=\"font-size:0.9em\">Partial restricted usage road</div>",
+                                "maneuver": "turn-left",
+                                "polyline": {
+                                    "points": "{`f~Cn}tiNNOKSo@iAk@}@Ye@iAgAy@_@i@Wq@Q{@Q{@Iy@EoHm@{AYm@Qc@Q[Q]Se@WQQgAmAWa@W_@[s@c@kA_@sAk@kBg@{Ac@oAq@yAMQYe@[YUQe@Si@Mw@Ks@G"
+                                },
+                                "start_location": {
+                                    "lat": 26.0867021,
+                                    "lng": -80.393997
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "1.3 mi",
+                                    "value": 2120
+                                },
+                                "duration": {
+                                    "text": "4 mins",
+                                    "value": 227
+                                },
+                                "end_location": {
+                                    "lat": 26.0876421,
+                                    "lng": -80.3691035
+                                },
+                                "html_instructions": "Turn <b>right</b> onto <b>Royal Palm Blvd</b>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "gxg~C|osiNZuD\\uCTwBVgCTiBVoANk@T_A@CNa@Ri@`@y@b@y@PWx@iAlAuAz@s@b@[DETMDChAq@p@a@b@Wr@c@n@a@~AaADC\\UvBsANKp@a@DETOXS^YRQLMVWp@y@JQJQR[JQTa@Xo@\\}@V{@Py@BS`@uBFc@DQBW@O@[@c@?W?a@?YAU?u@?aF?g@A{C?_CA_F"
+                                },
+                                "start_location": {
+                                    "lat": 26.095564,
+                                    "lng": -80.38670549999999
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "7.6 mi",
+                                    "value": 12235
+                                },
+                                "duration": {
+                                    "text": "7 mins",
+                                    "value": 419
+                                },
+                                "end_location": {
+                                    "lat": 25.9863998,
+                                    "lng": -80.3462356
+                                },
+                                "html_instructions": "Keep <b>right</b> at the fork, follow signs for <b>I-75 S</b>/<b>Miami</b> and merge onto <b>I-75 S</b>",
+                                "maneuver": "fork-right",
+                                "polyline": {
+                                    "points": "wff~CzapiNBG@C@O?[Bo@B_A@s@DsB@MBSHe@J]FSFMNY\\i@Zg@n@}@LSHMV[^i@X]Z_@BE\\]h@k@b@_@t@o@\\Y^Yb@[p@c@b@WZQXQXMZQx@]h@Uv@Yn@Ul@Qd@Kp@Of@Kx@Ql@Mp@Mz@Q@??A@?V]REfB[|Bc@NCzAYrAUlDq@z@SnAWtA]b@KrA]rA_@z@WzAe@z@YzAg@jC_A`Bq@tB{@fBy@nHgDvGyCjAi@VMnAk@v@_@|@_@x@_@x@_@x@_@z@]x@[~@[z@Yz@Y|@Wf@Oh@Oj@Of@MzA]h@K~A[h@IdAQx@Kh@Il@Gh@G|@Kh@Ed@E|AK`AGdBGXAfCE`EExGGjBCxAAdCC~DErJIpJKhOOdCAlJKd@?f@Anj@i@z@CbECvBC~AAdDEt@CzAEbAE`AGjAIvAMxAOjAOv@KbBWhCe@LCbB_@z@SbCo@lA]bBi@ZKn@WbA_@xAm@fAe@n@[JEvAq@vBcAbCkARKzGcDdBy@pAm@rAo@hAi@pAm@vAq@l@[xBcArCsArCuAtCsAbCkAhCmAxBeA~HuD^OjAk@bBw@bBy@fBy@pB}@bBq@pAe@fBm@VIl@Qv@UlCq@r@QlAWnB]`BYlBWlBSvAMxAKtAItACh@C^AbAA|@A~A?\\?J?nBBrBDx@DzBLvAJp@DH?VBV@ZDtAPh@Fb@Fv@L|AVfARnAVrBh@h@L`Cp@jBn@j@RbBl@bAb@|@^^NbAf@n@ZhAl@z@d@v@b@z@h@~@l@v@f@XRRNRLpAdAt@n@j@d@~@t@xApAvD`Dh@d@"
+                                },
+                                "start_location": {
+                                    "lat": 26.0876421,
+                                    "lng": -80.3691035
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "1.0 mi",
+                                    "value": 1637
+                                },
+                                "duration": {
+                                    "text": "2 mins",
+                                    "value": 94
+                                },
+                                "end_location": {
+                                    "lat": 25.9783897,
+                                    "lng": -80.3534957
+                                },
+                                "html_instructions": "Take exit <b>7</b> for <b>E Miramar Pkwy</b>",
+                                "maneuver": "ramp-right",
+                                "polyline": {
+                                    "points": "_nr}C~rkiNNf@NRPRf@h@~@~@`@`@f@f@j@l@BBv@v@~@|@lAfAtAnAr@p@`@LFDHFNNPLf@b@rB~AlBnAzAz@bAh@rAn@z@\\z@\\pAb@xA`@xF|Az@TXHVLJFHHNPJTFLFTBN@b@Ed@EPGRIPILILKHKHWNQHQDUBQ?K?YCy@MWEGCEEEEAGAG?KAQ@KCe@ASEc@"
+                                },
+                                "start_location": {
+                                    "lat": 25.9863998,
+                                    "lng": -80.3462356
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "2.6 mi",
+                                    "value": 4227
+                                },
+                                "duration": {
+                                    "text": "5 mins",
+                                    "value": 289
+                                },
+                                "end_location": {
+                                    "lat": 25.9787781,
+                                    "lng": -80.31124609999999
+                                },
+                                "html_instructions": "Merge onto <b>S 33rd St</b>/<b>Miramar Pkwy</b><div style=\"font-size:0.9em\">Continue to follow Miramar Pkwy</div>",
+                                "maneuver": "merge",
+                                "polyline": {
+                                    "points": "}{p}Cj`miN@qB?oB@m@?C@iC@wDM{JC}AY{G?mB?q@?oA?eC?KAyC?_@?iB?o@?}@?c@@yA?m@AmD?qA?gC@SCeC?cA?}C?_@?eB?{@@uC?_@?_F?u@Aw@Ak@Ci@IkB[yEIkACg@Ca@Ag@?o@E}B?oE?iD?i@?aA?cC?sSAiG?oAAkD?}FA{C?sM@sDHmEDoBL{DBaB@qC?s@?{E"
+                                },
+                                "start_location": {
+                                    "lat": 25.9783897,
+                                    "lng": -80.3534957
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "1.5 mi",
+                                    "value": 2436
+                                },
+                                "duration": {
+                                    "text": "3 mins",
+                                    "value": 184
+                                },
+                                "end_location": {
+                                    "lat": 25.9568736,
+                                    "lng": -80.3107132
+                                },
+                                "html_instructions": "Turn <b>right</b> onto <b>Flamingo Rd</b>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "k~p}ChxdiNbOOx@A\\AfBAx@AjCCbEEX?~ACxDEl@?d@?x@?lB?N?z@?r@CtACvACt@AF?j@Aj@Al@?t@ATAdAAhBCtAA~BE~@?RA`AAv@?jCCfBCh@?x@CxAAP?fCCxEAvB?XAzD?xD@vDAf@A"
+                                },
+                                "start_location": {
+                                    "lat": 25.9787781,
+                                    "lng": -80.31124609999999
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "3.4 mi",
+                                    "value": 5504
+                                },
+                                "duration": {
+                                    "text": "10 mins",
+                                    "value": 613
+                                },
+                                "end_location": {
+                                    "lat": 25.9087314,
+                                    "lng": -80.30825650000001
+                                },
+                                "html_instructions": "Continue onto <b>NW 67th Ave</b>/<b>Ludlam Rd</b><div style=\"font-size:0.9em\">Pass by Bank of America Financial Center (on the right in 1.1 mi)</div>",
+                                "polyline": {
+                                    "points": "mul}C|tdiNhDCr@A\\C`@A|@Gl@INA\\EXCr@OrBe@~@YjAc@|@_@fB_AtGaEDClBaAf@UPGv@Wp@StA_@pAWf@ItAQHArBMtACfAAf@A`@At@AzBEtBEhAAfDGvAElBC^?jCGh@?VA~ACRAZ?bBCD?f@AvA?nAD`AFtANz@LlATv@R^JfCz@fElBr@\\|@b@|@^tAn@n@TLDf@PdAZhAT|@Nr@J~@Hh@Dl@D|@Bv@@fCAXAdEGJ?rACvCIhAAzBCX?r@CrBC~@C|ACv@A@?XA@?t@A~AGnBGhAEbEE|ACN?PArCEdGKxCElBC~EKl@ArACdBC`BCrAF~BPxATtB^dBHR?b@?l@GRAnB_@vDiAtA_@vBq@x@S^IfAQ"
+                                },
+                                "start_location": {
+                                    "lat": 25.9568736,
+                                    "lng": -80.3107132
+                                },
+                                "travel_mode": "DRIVING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "135 ft",
+                                    "value": 41
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 6
+                                },
+                                "end_location": {
+                                    "lat": 25.9087002,
+                                    "lng": -80.30866120000002
+                                },
+                                "html_instructions": "Turn <b>right</b> onto <b>Miami Lakes Dr W</b>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "qhc}CrediNDhA?D"
+                                },
+                                "start_location": {
+                                    "lat": 25.9087314,
+                                    "lng": -80.30825650000001
+                                },
+                                "travel_mode": "DRIVING"
+                            }
+                        ],
+                        "traffic_speed_entry": [],
+                        "via_waypoint": []
+                    }
+                ],
+                "overview_polyline": {
+                    "points": "evh~CzaviNa@PKJt@lBl@bAp@j@~@d@r@Tx@HdACzB_@lCg@f@Et@?r@Lp@Th@b@ZZZh@z@~Bz@|@p@Xz@Tx@aCn@}Ah@{@d@g@`@[~@k@n@Yx@Uj@KlAM~@?dAHtCLt@Ad@G`AW`@Qj@a@~@aAb@}@ZgAN{AQ}JFaANo@Pm@t@sAfAoAdE_ErAmA{@}AeAcBiAgAy@_@i@Wq@Q{@Q{@IiJs@iCk@_Ac@cAk@yA_Bo@aA_A_CkA_EkAkD_AkBu@_AUQe@SaBYs@GZuDr@mGl@qF~@_Eb@kAdAsBjAaBlAuAz@s@h@a@ZQrEoCrD}B~DgCbBoAd@e@|@kA`AaBv@mBh@uBr@_EHgBAiBA{MA_JDKH{CFgDDa@TcANa@l@cAjAeBnAgBvAaBlAkArAiAbAu@tA{@jBcAbBs@fBo@rA]xA[tE_ABAV]REdF_AlJeBdGuAfD}@vC}@vCaAlFqB|EuBfQaIjFcCjF_CtBy@zBu@jEqAxEgAhCe@~B]~De@nAK~CS~BIhIKdRQnl@k@`QOfv@u@dGGpCIdCMbDWdD_@zCc@vCi@~Cs@pEmA~Bu@rBw@`DsAjGwCxOuHtU{K|a@{RfEqBxEwBtDwA~Bw@fHkB|Du@nEq@dEa@nDUbFKfEAbFHtDRjDTrD`@zATdDj@bE`AjD~@vCbAfDpApErBdCrArBlAdDxBfEhDzJnINf@NRx@|@tDvDhE`EhC`Ch@RrAhArB~AlBnA~CdBnClAlC`AhL~Cb@TXZRb@Jd@@b@Ed@Md@S^UVc@Xc@Ng@Be@CqASMIGMASEwAEc@@qB@}C@mC@wDM{J]yJ?_DA{J?wF?yIAsJ?gJ@qMGcEs@yLKwF?eNEkcAJaKRkHDsF?oGbUUbLKlJIrF?dLQdPS|POrNGtQA|EE~@ExCYlASrD_AhCcAfB_AtGaErBeAx@]hBk@tA_@pAW|B[|BOfFIpJO~FMlCClHMxCE~BApCLpC\\dCh@fDfAzFjCzBbAdCdAt@VnCp@pBZhBNjBH~D?~HMvJOdIOjFMxDM`HIzLStOWxDG`BCrAF~BPxATtB^dBHv@?`AInB_@vDiAlEqAxA]fAQDhA?D"
+                },
+                "summary": "I-75 S",
+                "warnings": [],
+                "waypoint_order": []
+            }
+        ],
+        "status": "OK"
+    },
+    "requestUrl": "https://maps.googleapis.com/maps/api/directions/json?departure_time=1521760200&destination=Miami%20lakes%2C%20fl&origin=weston%2C%20fl&key=AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY",
+    "query": {
+        "departure_time": 1521760200,
+        "destination": "Miami lakes, fl",
+        "origin": "weston, fl",
+        "key": "AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY"
+    }
+}

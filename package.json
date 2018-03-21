@@ -4,7 +4,7 @@
   "description": "google maps API adapter",
   "main": "app.js",
   "scripts": {
-    "test": "test",
+    "test": "istanbul cover -x *.test.js _mocha -- -R spec src/test/*",
     "start": "node src/app.js"
   },
   "keywords": [
@@ -16,7 +16,7 @@
   "contributors": [
     "Ivette Duran <ivette_duran@ultimatesoftware.com>",
     "David Giles <david_giles@ultimatesoftware.com>"
-],
+  ],
   "license": "MIT",
   "dependencies": {
     "@google/maps": "^0.4.5",
@@ -24,5 +24,16 @@
     "restify": "^6.3.4",
     "restify-plugins": "^1.6.0"
   },
-  "repository": "github:AITestingOrg/gmaps-adapter"
+  "repository": "github:AITestingOrg/gmaps-adapter",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "delay": "^2.0.0",
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.1.0",
+    "mocha": "^5.0.4",
+    "mock-require": "^3.0.1",
+    "mock-res": "^0.5.0",
+    "proxyquire": "^2.0.1",
+    "sinon": "^4.4.6"
+  }
 }
