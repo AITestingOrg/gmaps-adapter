@@ -41,13 +41,12 @@ function sleep(ms) {
 
 async function waitReady() {
   console.log("Waiting for eureka.");
-  await sleep(30000);
+  await sleep(25000);
   eureka.start((error) => {
     console.log(error || 'complete');
   });
 }
 waitReady();
-
 
 app.listen(port, () => {
   console.log('%s listening at %s', app.name, app.url);
