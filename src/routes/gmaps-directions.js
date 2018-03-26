@@ -15,6 +15,11 @@ const directions = (req, res) => {
   );
 }
 
+const status = (req, res) => {
+  res.send(200, {alive: true});
+}
+
 module.exports = (app) => {
   app.post('/directions', directions);
+  app.get('/status', status);
 }
