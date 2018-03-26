@@ -16,10 +16,11 @@
   "contributors": [
     "Ivette Duran <ivette_duran@ultimatesoftware.com>",
     "David Giles <david_giles@ultimatesoftware.com>"
-],
+  ],
   "license": "MIT",
   "dependencies": {
     "@google/maps": "^0.4.5",
+    "eureka-js-client": "^4.4.1",
     "npm": "^5.7.1",
     "restify": "^6.3.4",
     "restify-plugins": "^1.6.0"
