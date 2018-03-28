@@ -21,6 +21,7 @@
   "dependencies": {
     "@google/maps": "^0.4.5",
     "jslint-node": "^1.2.4",
+    "eureka-js-client": "^4.4.1",
     "npm": "^5.7.1",
     "restify": "^6.3.4",
     "restify-plugins": "^1.6.0"

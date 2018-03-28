@@ -17,6 +17,11 @@ const directionsMapping = (req, res) => {
   );
 }
 
+const status = (req, res) => {
+  res.send(200, {alive: true});
+}
+
 module.exports = (app) => {
   app.post('/api/v1/directions', directionsMapping);
+  app.get('/api/v1/status', status);
 }
