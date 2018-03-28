@@ -1,0 +1,63 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Retrieves and parses information from the google maps api.",
+    "version" : "0.1",
+    "title" : "gmaps-adapter"
+  },
+  "paths" : {
+    "/api/v1/directions" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/direction-req"
+          },
+          "x-examples" : {
+            "application/json" : "{\n\t\"origin\": \"Miami Lakes, florida\",\n\t\"destination\": \"Miami Beach, Fl\",\n\t\"departure_time\": \"15217600000\"\n}"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "returns estimated distance in meters and duration in seconds.",
+            "schema" : {
+              "$ref" : "#/definitions/direction-res"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "direction-req" : {
+      "properties" : {
+        "origin" : {
+          "type" : "string"
+        },
+        "destination" : {
+          "type" : "string"
+        },
+        "departure_time" : {
+          "type" : "string"
+        }
+      }
+    },
+    "direction-res" : {
+      "properties" : {
+        "duration" : {
+          "type" : "integer"
+        },
+        "distance" : {
+          "type" : "integer"
+        }
+      },
+      "example" : {
+        "duration" : 0,
+        "distance" : 6
+      }
+    }
+  }
+}
