@@ -26,7 +26,7 @@
                     "Content-Type": "application/json"
                 },
                 "body": {
-                    "duration": 1667,
+                    "duration": 1666,
                     "distance": 34101
                 }
             }
