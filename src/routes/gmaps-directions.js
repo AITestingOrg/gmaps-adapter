@@ -18,5 +18,5 @@ const directionsMapping = (req, res) => {
 }
 
 module.exports = (app) => {
-  app.post('/directions', directionsMapping);
+  app.post('/api/v1/directions', directionsMapping);
 }

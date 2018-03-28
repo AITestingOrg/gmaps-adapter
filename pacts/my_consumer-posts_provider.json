@@ -10,7 +10,7 @@
             "description": "a post request from weston, FL to Miami Lakes, FL",
             "request": {
                 "method": "POST",
-                "path": "/directions",
+                "path": "/api/v1/directions",
                 "body": {
                     "origin": "weston, fl",
                     "destination": "Miami lakes, fl",
