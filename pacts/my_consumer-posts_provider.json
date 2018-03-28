@@ -1,0 +1,38 @@
+{
+    "consumer": {
+        "name": "calculation-service"
+    },
+    "provider": {
+        "name": "gmaps-adapter"
+    },
+    "interactions": [
+        {
+            "description": "a post request from weston, FL to Miami Lakes, FL",
+            "request": {
+                "method": "POST",
+                "path": "/directions",
+                "body": {
+                    "origin": "weston, fl",
+                    "destination": "Miami lakes, fl",
+                    "departure_time": 15220998650000000
+                },
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "duration": 1667,
+                    "distance": 34101
+                }
+            }
+        }
+    ],
+    "metadata": {
+      "pactSpecificationVersion": "2.0.0"
+    }
+}
