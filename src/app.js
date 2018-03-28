@@ -6,6 +6,7 @@ const port = process.env.PORT || 8080;
 
 const app = restify.createServer();
 app.use(restify.plugins.bodyParser());
+
 routes(app);
 
 const eureka = new Eureka({

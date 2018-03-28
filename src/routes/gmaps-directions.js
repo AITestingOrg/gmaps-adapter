@@ -1,15 +1,17 @@
 const parser = require('./../utils/parser.js');
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY'
-});
+    key: 'AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY'
+  });
 
-const directions = (req, res) => {
+const directionsMapping = (req, res) => {
   googleMapsClient.directions(req.body, 
     (err, response) => {
       if(!err) {
-        res.send(parser.responseParser(response));
+        const parsed = parser.responseParser(response);
+        res.send(parsed);
       } else {
-        res.send(400, parser.errorParser(err));
+        const parsedError = parser.errorParser(err);
+        res.send(400, parsedError);
       }
     }
   );
@@ -20,6 +22,6 @@ const status = (req, res) => {
 }
 
 module.exports = (app) => {
-  app.post('/directions', directions);
-  app.get('/status', status);
+  app.post('/api/v1/directions', directionsMapping);
+  app.get('/api/v1/status', status);
 }
