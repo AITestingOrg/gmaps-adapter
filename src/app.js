@@ -15,8 +15,8 @@ const eureka = new Eureka({
     app: 'gmapsadapter',
     hostName: 'localhost',
     ipAddr: '0.0.0.0',
-    statusPageUrl: `http://localhost:${port}/status`,
-    healthcheckUrl: `http://localhost:${port}/status`,
+    statusPageUrl: `http://localhost:${port}/api/v1/status`,
+    healthcheckUrl: `http://localhost:${port}/api/v1/status`,
     port: {
       '$': port,
       '@enabled': 'true',
