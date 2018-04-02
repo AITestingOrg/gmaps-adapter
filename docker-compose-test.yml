@@ -4,8 +4,6 @@ services:
     image: springcloud/eureka
     ports:
       - "8761:8761"
-
-
   gmaps-adapter:
     depends_on:
       - discovery-service

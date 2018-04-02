@@ -1,54 +1,15 @@
-const restify = require('restify');
-const routes = require('./routes/gmaps-directions.js');
-const Eureka = require('eureka-js-client').Eureka;
+const restify = require('restify')
+const routes = require('./routes/gmaps-directions.js')
+const winston = require('winston')
+const waitSubscribe = require('./utils/eureka-subscription.js')
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080
+const app = restify.createServer()
+app.use(restify.plugins.bodyParser())
 
-const app = restify.createServer();
-app.use(restify.plugins.bodyParser());
-
-routes(app);
-
-const eureka = new Eureka({
-  instance: {
-    instanceId:'gmapsadapter',
-    app: 'gmapsadapter',
-    hostName: 'localhost',
-    ipAddr: '0.0.0.0',
-    statusPageUrl: `http://localhost:${port}/api/v1/status`,
-    healthcheckUrl: `http://localhost:${port}/api/v1/status`,
-    port: {
-      '$': port,
-      '@enabled': 'true',
-    },
-    vipAddress: 'localhost',
-    dataCenterInfo: {
-      '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
-      name: 'MyOwn',
-    }
-  },
-  eureka: {
-    host: process.env.EUREKA_SERVER || 'localhost',
-    port: 8761,
-    servicePath: '/eureka/apps/',
-  }
-});
-eureka.logger.level('debug');
-
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function waitReady() {
-  console.log("Waiting for eureka.");
-  await sleep(25000);
-  eureka.start((error) => {
-    console.log(error || 'complete');
-  });
-}
-waitReady();
+routes(app)
+waitSubscribe()
 
 app.listen(port, () => {
-  console.log('%s listening at %s', app.name, app.url);
-});
+  winston.log('info', `${app.name} listening at ${app.url}`)
+})
