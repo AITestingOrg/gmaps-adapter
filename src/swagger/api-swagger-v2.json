@@ -17,7 +17,7 @@
             "$ref" : "#/definitions/direction-req"
           },
           "x-examples" : {
-            "application/json" : "{\n\t\"origin\": \"Miami Lakes, florida\",\n\t\"destination\": \"Miami Beach, Fl\",\n\t\"departure_time\": \"15217600000\"\n}"
+            "application/json" : "{\n\t\"origin\": \"Miami Lakes, florida\",\n\t\"destination\": \"Miami Beach, Fl\",\n\t\"departureTime\": \"15217600000\"\n}"
           }
         } ],
         "responses" : {
@@ -40,7 +40,7 @@
         "destination" : {
           "type" : "string"
         },
-        "departure_time" : {
+        "departureTime" : {
           "type" : "string"
         }
       }

@@ -4,8 +4,9 @@
   "description": "google maps API adapter",
   "main": "app.js",
   "scripts": {
-    "test": "istanbul cover -x *.test.js _mocha -- -R spec src/test/*",
-    "start": "node src/app.js"
+    "test": "standard && istanbul cover -x *.test.js _mocha -- -R spec src/test/*",
+    "start": "node src/app.js",
+    "lint": "standard --fix"
   },
   "keywords": [
     "google",
@@ -35,6 +36,7 @@
     "delay": "^2.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.0.4",
-    "pact": "^4.3.2"
+    "pact": "^4.3.2",
+    "standard": "^11.0.1"
   }
 }

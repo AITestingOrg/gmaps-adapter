@@ -14,7 +14,7 @@
                 "body": {
                     "origin": "weston, fl",
                     "destination": "Miami lakes, fl",
-                    "departure_time": 15220998650000000
+                    "departureTime": 15220998650000000
                 },
                 "headers": {
                     "Content-Type": "application/json"
