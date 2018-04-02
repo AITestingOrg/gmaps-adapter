@@ -12,13 +12,21 @@ A simple Node.js app using restify that interacts with the googleMaps directions
 
 This service currently provides the following endpoints:
 
-* POST to api/v1/diretions with a body :
+* POST to api/v1/directions with a body:
 
 ```js
 {
 	"origin": "string value",
 	"destination": "string value",
 	"departureTime": "time of departure in epoch"
+}
+```
+
+* POST to api/v1/geocode with a body:
+
+```js
+{
+	"address": "string value",
 }
 ```
 

@@ -1,5 +1,5 @@
 const restify = require('restify')
-const routes = require('./routes/gmaps-directions.js')
+const routes = require('./routes/routes.js')
 const winston = require('winston')
 const waitSubscribe = require('./utils/eureka-subscription.js')
 
