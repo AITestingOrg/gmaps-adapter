@@ -23,27 +23,27 @@ const directionsMapping = (req, res) => {
         res.send(400, parsedError)
       }
     }
-  );
-};
+  )
+}
 
 const geocode = (req, res) => {
   googleMapsClient.geocode(req.body,
     (err, response) => {
       if (!err) {
-        res.send(parser.geoResponseParser(response));
+        res.send(parser.geoResponseParser(response))
       } else {
-        res.send(400, parser.geoErrorParser(err));
+        res.send(400, parser.geoErrorParser(err))
       }
     }
-  );
-};
+  )
+}
 
 const status = (req, res) => {
-  res.send(200, { alive: true });
-};
+  res.send(200, { alive: true })
+}
 
 module.exports = (app) => {
-  app.post('/api/v1/directions', directionsMapping);
-  app.post('/api/v1/geocode', geocode);
-  app.get('/api/v1/status', status);
+  app.post('/api/v1/directions', directionsMapping)
+  app.post('/api/v1/geocode', geocode)
+  app.get('/api/v1/status', status)
 }

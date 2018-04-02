@@ -31,25 +31,25 @@ const errorParser = (err) => {
 }
 
 const geoResponseParser = (body) => {
-  const route = se.nestedExtract(body, JSON_STRING, RESULTS, 0, GEOMETRY, LOCATION);
+  const route = se.nestedExtract(body, JSON_STRING, RESULTS, 0, GEOMETRY, LOCATION)
   const result = {
     latitude: se.nestedExtract(route, LAT),
     longitude: se.nestedExtract(route, LNG)
   }
-  return result;
+  return result
 }
 
 const geoErrorParser = (err) => {
-  let message =  se.nestedExtract(err, JSON_STRING, ERROR_MESSAGE);
-  message = message ? message: "The address may not be accurate. Verify it is correct.";
+  let message = se.nestedExtract(err, JSON_STRING, ERROR_MESSAGE)
+  message = message || 'The address may not be accurate. Verify it is correct.'
   const result = {
     error_message: message
   }
-  return result;
+  return result
 }
 
 module.exports = {
-  responseParser: responseParser, 
+  responseParser: responseParser,
   errorParser: errorParser,
   geoResponseParser: geoResponseParser,
   geoErrorParser: geoErrorParser

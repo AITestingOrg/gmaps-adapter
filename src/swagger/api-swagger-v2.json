@@ -14,17 +14,41 @@
           "name" : "body",
           "required" : false,
           "schema" : {
-            "$ref" : "#/definitions/direction-req"
+            "$ref" : "#/definitions/Model1"
           },
           "x-examples" : {
             "application/json" : "{\n\t\"origin\": \"Miami Lakes, florida\",\n\t\"destination\": \"Miami Beach, Fl\",\n\t\"departureTime\": \"15217600000\"\n}"
           }
         } ],
         "responses" : {
-          "default" : {
-            "description" : "returns estimated distance in meters and duration in seconds.",
+          "200" : {
+            "description" : "ok",
             "schema" : {
-              "$ref" : "#/definitions/direction-res"
+              "$ref" : "#/definitions/directionsRes"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/geocode" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model0"
+          },
+          "x-examples" : {
+            "application/json" : "{\n\t\"address\": \"Miami Lakes, florida\"\n}"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "ok",
+            "schema" : {
+              "$ref" : "#/definitions/geocodeRes"
             }
           }
         }
@@ -32,7 +56,17 @@
     }
   },
   "definitions" : {
-    "direction-req" : {
+    "Model0" : {
+      "properties" : {
+        "address" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "address" : "address"
+      }
+    },
+    "Model1" : {
       "properties" : {
         "origin" : {
           "type" : "string"
@@ -43,9 +77,14 @@
         "departureTime" : {
           "type" : "string"
         }
+      },
+      "example" : {
+        "departureTime" : "departureTime",
+        "origin" : "origin",
+        "destination" : "destination"
       }
     },
-    "direction-res" : {
+    "directionsRes" : {
       "properties" : {
         "duration" : {
           "type" : "integer"
@@ -57,6 +96,20 @@
       "example" : {
         "duration" : 0,
         "distance" : 6
+      }
+    },
+    "geocodeRes" : {
+      "properties" : {
+        "latitude" : {
+          "type" : "number"
+        },
+        "longitude" : {
+          "type" : "number"
+        }
+      },
+      "example" : {
+        "latitude" : 0.80082819046101150206595775671303272247314453125,
+        "longitude" : 6.02745618307040320615897144307382404804229736328125
       }
     }
   }
