@@ -9,6 +9,8 @@ services:
   gmaps-adapter:
     depends_on:
       - discovery-service
+    links:
+      - discovery-service
     build: ./
     ports:
       - "8080"

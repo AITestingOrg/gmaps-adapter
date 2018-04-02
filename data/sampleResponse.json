@@ -347,9 +347,9 @@
         ],
         "status": "OK"
     },
-    "requestUrl": "https://maps.googleapis.com/maps/api/directions/json?departure_time=1521760200&destination=Miami%20lakes%2C%20fl&origin=weston%2C%20fl&key=AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY",
+    "requestUrl": "https://maps.googleapis.com/maps/api/directions/json?departureTime=1521760200&destination=Miami%20lakes%2C%20fl&origin=weston%2C%20fl&key=AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY",
     "query": {
-        "departure_time": 1521760200,
+        "departureTime": 1521760200,
         "destination": "Miami lakes, fl",
         "origin": "weston, fl",
         "key": "AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY"
