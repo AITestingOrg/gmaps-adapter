@@ -1,14 +1,15 @@
 const restify = require('restify')
 const routes = require('./routes/gmaps-directions.js')
 const winston = require('winston')
-require('./utils/eureka-subscription.js')
+const waitSubscribe = require('./utils/eureka-subscription.js')
 
 const port = process.env.PORT || 8080
 const app = restify.createServer()
 app.use(restify.plugins.bodyParser())
 
 routes(app)
+waitSubscribe()
 
 app.listen(port, () => {
-  winston.log('info', `${app.name}s listening at ${app.url}`)
+  winston.log('info', `${app.name} listening at ${app.url}`)
 })
