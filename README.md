@@ -18,7 +18,7 @@ This service currently provides the following endpoints:
 {
 	"origin": "string value",
 	"destination": "string value",
-	"departure_time": "time of departure in epoch"
+	"departureTime": "time of departure in epoch"
 }
 ```
 

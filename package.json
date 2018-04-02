@@ -23,7 +23,6 @@
     "@google/maps": "^0.4.5",
     "eureka-js-client": "^4.4.1",
     "ip": "^1.1.5",
-    "jslint-node": "^1.2.4",
     "npm": "^5.7.1",
     "request": "^2.85.0",
     "restify": "^6.3.4",
