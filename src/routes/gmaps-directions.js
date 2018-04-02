@@ -7,7 +7,12 @@ const winston = require('winston')
 
 const directionsMapping = (req, res) => {
   winston.log('info', 'Requesting directions for google map with body:', req.body)
-  googleMapsClient.directions(req.body,
+  const fixedBody = {
+    origin:req.body.origin,
+    destination:req.body.destination,
+    departure_time:req.body.departureTime
+  }
+  googleMapsClient.directions(fixedBody,
     (err, response) => {
       if (!err) {
         const parsed = parser.responseParser(response)
