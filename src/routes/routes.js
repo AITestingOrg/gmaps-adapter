@@ -15,11 +15,11 @@ const directionsMapping = (req, res) => {
   googleMapsClient.directions(fixedBody,
     (err, response) => {
       if (!err) {
-        const parsed = parser.responseParser(response)
+        const parsed = parser.dirResponseParser(response)
         res.send(parsed)
       } else {
-        const parsedError = parser.errorParser(err)
-        winston.log('error', parsedError)
+        const parsedError = parser.dirErrorParser(err)
+        winston.log('error', 'directions: ', parsedError)
         res.send(400, parsedError)
       }
     }
@@ -30,9 +30,16 @@ const geocode = (req, res) => {
   googleMapsClient.geocode(req.body,
     (err, response) => {
       if (!err) {
-        res.send(parser.geoResponseParser(response))
+        if (response.json.status === 'OK') {
+          res.send(parser.geoResponseParser(response))
+        } else {
+          winston.log('error', 'geocode: No results')
+          res.send(400, {results: 'No results'})
+        }
       } else {
-        res.send(400, parser.geoErrorParser(err))
+        const parsedError = parser.geoErrorParser(err)
+        winston.log('error', 'geocode: ', parsedError)
+        res.send(400, parsedError)
       }
     }
   )

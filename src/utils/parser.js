@@ -12,7 +12,7 @@ const LOCATION = 'location'
 const LAT = 'lat'
 const LNG = 'lng'
 
-const responseParser = (body) => {
+const dirResponseParser = (body) => {
   const route = se.nestedExtract(body, JSON_STRING, ROUTES, 0, LEGS, 0)
   const result = {
     duration: se.nestedExtract(route, DURATION_IN_TRAFFIC, VALUE),
@@ -21,7 +21,7 @@ const responseParser = (body) => {
   return result
 }
 
-const errorParser = (err) => {
+const dirErrorParser = (err) => {
   let message = se.nestedExtract(err, JSON_STRING, ERROR_MESSAGE)
   message = message || 'One of the addresses may not be accurate. Verify they are correct.'
   const result = {
@@ -49,8 +49,8 @@ const geoErrorParser = (err) => {
 }
 
 module.exports = {
-  responseParser: responseParser,
-  errorParser: errorParser,
+  dirResponseParser: dirResponseParser,
+  dirErrorParser: dirErrorParser,
   geoResponseParser: geoResponseParser,
   geoErrorParser: geoErrorParser
 }
