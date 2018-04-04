@@ -9,8 +9,8 @@ const url = 'http://discovery-service:8761/eureka/'
 
 const eureka = new Eureka({
   instance: {
-    instanceId: 'gmapsadapter',
-    app: 'gmapsadapter',
+    instanceId: 'gmaps-adapter',
+    app: 'gmaps-adapter',
     hostName: addr,
     ipAddr: addr,
     homePageUrl: `http://${addr}:${port}`,
