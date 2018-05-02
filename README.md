@@ -8,6 +8,15 @@ A simple Node.js app using restify that interacts with the googleMaps directions
 * Run `npm install`.
 * Run `npm start`.
 
+## Running with docker:
+
+* Run `docker-compose up --build`.
+
+## Features:
+
+* Get estimate duration and distance for traveling between two addresses at a give time.
+* Retrieve coordinates for an address.
+
 ## Swagger 2.0 docs
 
 This service currently provides the following endpoints:
