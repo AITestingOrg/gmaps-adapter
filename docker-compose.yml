@@ -1,16 +1,16 @@
 version: '3'
 services:
-  discovery-service:
+  discoveryservice:
     image: aista/eureka
     ports:
       - "8761:8761"
   gmaps-adapter:
     depends_on:
-      - discovery-service
+      - discoveryservice
     links:
-      - discovery-service
+      - discoveryservice
     build: ./
     ports:
       - "8080"
     environment:
-      - EUREKA_SERVER=discovery-service
+      - EUREKA_SERVER=discoveryservice
