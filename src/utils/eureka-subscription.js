@@ -16,9 +16,13 @@ const eureka = new Eureka({
     homePageUrl: `http://${addr}:${port}`,
     statusPageUrl: `http://${addr}:${port}/api/v1/status`,
     healthcheckUrl: `http://${addr}:${port}/api/v1/status`,
-    port: port,
+    port: {
+      '$': port,
+      '@enabled': true
+    },
     vipAddress: addr,
     dataCenterInfo: {
+      '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
       name: 'MyOwn'
     }
   },
