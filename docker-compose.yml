@@ -9,7 +9,7 @@ services:
       - discoveryservice
     links:
       - discoveryservice
-    build: ./
+    image: aista/gmaps-adapter
     ports:
       - "8080"
     environment:
