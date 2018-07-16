@@ -33,7 +33,8 @@ function getDirections (trip) {
           originAddress: trip.origin,
           destinationAddress: trip.destination,
           distance: parsed.distance,
-          duration: parsed.duration
+          duration: parsed.duration,
+          userId: trip.userId
         }
         var msg = JSON.stringify(estimation)
         winston.log('info', 'JsonStringified: ' + msg + ' is being published')
