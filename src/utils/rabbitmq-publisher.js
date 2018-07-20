@@ -1,7 +1,11 @@
 const amqp = require('amqplib/callback_api')
 const winston = require('winston')
 
+// initializeChannel();
+
 function publishMessage (exchangeName, routingKey, msg) {
+  // while (!channel);
+
   var msgToSend = Buffer.from(msg, 'utf-8')
   var rabbitHost = process.env.RABBIT_HOST || 'localhost'
   var rabbitUsername = process.env.RABBIT_USERNAME || 'guest'
@@ -20,25 +24,26 @@ function publishMessage (exchangeName, routingKey, msg) {
   })
 }
 
-//   ch.assertExchange(
+
+//   channel.assertExchange(
 //     exchangeName,
 //     'topic',
 //     {durable: true, autoDelete: false, internal: false, nowait: false, args: null}
 //   )
-//   ch.publish(exchangeName, routingKey, msgToSend)
-  
+//   channel.publish(exchangeName, routingKey, msgToSend)
+
 
 //   winston.log('info', 'Published message:' + msg.toString() + ' to exchange: ' + exchangeName + ' with routingKey: ' + routingKey)
+// }
+
+// function initializeChannel () {
+//   amqp.connect('amqp://' + (process.env.RABBIT_USERNAME || 'guest') + ':' + (process.env.RABBIT_PASSWORD || 'guest') + '@' + (process.env.RABBIT_HOST || 'localhost') + ':5672/', function (err, conn) {
+//     conn.createChannel(function (err, ch) {
+//       channel = ch;
+//     })
+// })
 // }
 
 // module.exports = {
 //   publishMessage: publishMessage
 // }
-
-// function initializeChannel () {
-//   amqp.connect('amqp://' + (process.env.RABBIT_USERNAME || 'guest') + ':' + (process.env.RABBIT_PASSWORD || 'guest') + '@' + (process.env.RABBIT_HOST || 'localhost') + ':5672/', function (err, conn) {
-//     conn.createChannel(function (err, ch) {})
-// })
-// }
-
-// const ch = initializeChannel()
