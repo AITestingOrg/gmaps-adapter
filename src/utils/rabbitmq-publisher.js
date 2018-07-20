@@ -15,11 +15,30 @@ function publishMessage (exchangeName, routingKey, msg) {
         {durable: true, autoDelete: false, internal: false, nowait: false, args: null}
       )
       ch.publish(exchangeName, routingKey, msgToSend)
+      ch.close()
     })
   })
-  winston.log('info', 'Published message:' + msg.toString() + ' to exchange: ' + exchangeName + ' with routingKey: ' + routingKey)
 }
 
-module.exports = {
-  publishMessage: publishMessage
-}
+//   ch.assertExchange(
+//     exchangeName,
+//     'topic',
+//     {durable: true, autoDelete: false, internal: false, nowait: false, args: null}
+//   )
+//   ch.publish(exchangeName, routingKey, msgToSend)
+  
+
+//   winston.log('info', 'Published message:' + msg.toString() + ' to exchange: ' + exchangeName + ' with routingKey: ' + routingKey)
+// }
+
+// module.exports = {
+//   publishMessage: publishMessage
+// }
+
+// function initializeChannel () {
+//   amqp.connect('amqp://' + (process.env.RABBIT_USERNAME || 'guest') + ':' + (process.env.RABBIT_PASSWORD || 'guest') + '@' + (process.env.RABBIT_HOST || 'localhost') + ':5672/', function (err, conn) {
+//     conn.createChannel(function (err, ch) {})
+// })
+// }
+
+// const ch = initializeChannel()
