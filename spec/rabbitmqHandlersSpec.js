@@ -1,190 +1,136 @@
-const rabbitmqHandlers = require('../src/handlers/rabbitmq-handlers')
-
+const rabbitMqHandlers = require('../src/handlers/rabbitmq-handlers')
 // Test valid rabbitmq-handlers input
-// Arrange
-let innerContent = {
-  origin: "Weston, Fl",
-  destination: "Miami, Fl",
-  departureTime: 12,
-  userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
-};
-let content = Object.assign(innerContent, {
-  toString: () => JSON.stringify(innerContent)
-});
+describe('rabbitmq-handlers', () => {
+  it('should have valid content', () => {
+    // Arrange
+    const validTrip = {
+      content: {
+        origin: 'Weston, Fl',
+        destination: 'Miami, Fl',
+        departureTime: 12,
+        userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
+      }
+    }
 
-var validTrip = {
-  content: content 
-};
+    validTrip.content.toString = () => JSON.stringify(validTrip.content)
 
-// Act
-var answer = rabbitmqHandlers.getDirections(validTrip)
-var resolves = true
-answer.then(function (result) {
-    resolves = true
-}, function (err) {
-    resolves = false
-})
-
-// Assert
-describe('rabbitmq-handlers', function () {
-  it('should resolve the message', function () {
-    expect(resolves).toEqual(true);
-  });
-});
-
-// Test invalid rabbitmq-handlers input
-// Arrange
-
-let invalidInnerContent = {
-  destination: "Miami, Fl",
-  departureTime: 12,
-  userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
-};
-
-let invalidContent = Object.assign(invalidInnerContent, {
-  toString: () => JSON.stringify(invalidInnerContent)
-});
-
-var invalidTrip = {
-  content: invalidContent
-};
-
-// Act
-var answer = rabbitmqHandlers.getDirections(invalidTrip)
-var rejects = true
-answer.then(function (result) {
-    rejects = false
-}, function (err) {
-    rejects = true
-})
-
-// Assert
-describe('rabbitmq-handlers', function () {
-  it('should reject the message because missing field', function () {
-    expect(rejects).toEqual(true)
+    // Act
+    let answer = rabbitMqHandlers.getDirections(validTrip)
+    let resolves = true
+    answer.then(() => {
+      resolves = true
+    }, () => {
+      resolves = false
+    })
+    // Assert
+    expect(resolves).toEqual(true)
   })
-})
 
-// Test invalid rabbitmq-handlers input
-// Arrange
-var invalidTrip = {
-  content: 5
-};
+  // Test invalid rabbitmq-handlers input
+  it('should handle invalid input', (done) => {
+    // Arrange
+    let invalidTrip = {
+      content: {
+        destination: 'Miami, Fl',
+        departureTime: 12,
+        userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
+      }
+    }
 
-// Act
-var answer = rabbitmqHandlers.getDirections(invalidTrip)
-var doesntwork = true
-answer.then(function (result) {
-    doesntwork = false
-}, function (err) {
-    doesntwork = true
-})
+    invalidTrip.content.toString = () => JSON.stringify(invalidTrip.content)
 
-// Assert
-describe('rabbitmq-handlers', function () {
-  it('should reject the message because invalid trip', function () {
-    expect(doesntwork).toEqual(true)
+    // Act
+    let answer = rabbitMqHandlers.getDirections(invalidTrip)
+    let rejects = true
+    answer.then(() => {
+      done.error()
+    }, () => {
+      done()
+    })
   })
-})
 
-// Test invalid origin rabbitmq-handlers input
-// Arrange
-
-let badOriginInput = {
-  origin: "Nicaragua",
-  destination: "Miami, Fl",
-  departureTime: 12,
-  userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
-};
-
-let badOriginContent = Object.assign(badOriginInput, {
-  toString: () => JSON.stringify(badOriginInput)
-});
-
-var badOriginTrip = {
-  content: badOriginContent
-};
-
-// Act
-var answer = rabbitmqHandlers.getDirections(badOriginTrip)
-var badorigin = true
-answer.then(function (result) {
-    badorigin = false
-}, function (err) {
-    badorigin = true
-})
-
-// Assert
-describe('rabbitmq-handlers', function () {
-  it('should reject the message because invalid origin', function () {
-    expect(badorigin).toEqual(true)
+  // Test invalid rabbitmq-handlers input
+  it('should handle invalid trip input; doesn\'t conform to model', (done) => {
+    // Arrange
+    let invalidTrip = {
+      content: 5
+    }
+    // Act
+    let answer = rabbitMqHandlers.getDirections(invalidTrip)
+    answer.then(function () {
+      done.error()
+    }, function () {
+      done()
+    })
   })
-})
 
-// Test invalid destination rabbitmq-handlers input
-// Arrange
+  // Test invalid origin rabbitmq-handlers input
+  it('should correctly handle invalid origin input', (done) => {
+    // Arrange
+    const badOriginTrip = {
+      content: {
+        origin: 'Nicaragua',
+        destination: 'Miami, Fl',
+        departureTime: 12,
+        userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
+      }
+    }
 
-let badDestinationInput = {
-  origin: "Weston, Fl",
-  destination: "Jerusalem",
-  departureTime: 12,
-  userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
-};
+    badOriginTrip.content.toString = () => JSON.stringify(badOriginTrip.content)
 
-let badDestinationContent = Object.assign(badDestinationInput, {
-  toString: () => JSON.stringify(badDestinationInput)
-});
+    // Act
+    let answer = rabbitMqHandlers.getDirections(badOriginTrip)
+    answer.then(() => {
+      done.error()
+    }, () => {
+      done()
+    })
+  })
+  // Test invalid destination rabbitmq-handlers input
+  it('should correctly handle invalid destination', () => {
+    // Arrange
+    const badDestinationTrip = {
+      content: {
+        origin: 'Weston, Fl',
+        destination: 'Jerusalem',
+        departureTime: 12,
+        userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
+      }
+    }
 
-var badDestinationTrip = {
-  content: badDestinationContent
-};
+    badDestinationTrip.content.toString = () => JSON.stringify(badDestinationTrip.content)
 
-// Act
-var answer = rabbitmqHandlers.getDirections(badDestinationTrip)
-var badDestination = true
-answer.then(function (result) {
-  badDestination = false
-}, function (err) {
-  badDestination = true
-})
-
-// Assert
-describe('rabbitmq-handlers', function () {
-  it('should reject the message because invalid destination', function () {
+    // Act
+    let answer = rabbitMqHandlers.getDirections(badDestinationTrip)
+    let badDestination = true
+    answer.then(() => {
+      badDestination = false
+    }, () => {
+      badDestination = true
+    })
+    // Assert
     expect(badDestination).toEqual(true)
   })
-})
 
-// Test invalid departureTime rabbitmq-handlers input
-// Arrange
-
-let badDepartureTimeInput = {
-  origin: "Weston, Fl",
-  destination: "Miami, Fl",
-  departureTime: "56",
-  userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
-};
-
-let badDepartureTimeContent = Object.assign(badDepartureTimeInput, {
-  toString: () => JSON.stringify(badDepartureTimeInput)
-});
-
-var badDepartureTimeTrip = {
-  content: badDepartureTimeContent
-};
-
-// Act
-var answer = rabbitmqHandlers.getDirections(badDepartureTimeTrip)
-var badDepartureTime = true
-answer.then(function (result) {
-  badDepartureTime = false
-}, function (err) {
-  badDepartureTime = true
-})
-
-// Assert
-describe('rabbitmq-handlers', function () {
-  it('should reject the message because invalid time', function () {
-    expect(badDepartureTime).toEqual(true)
+  // Test invalid departureTime rabbitmq-handlers input
+  it('should correctly handle invalid departure time', (done) => {
+    // Arrange
+    const badDepartureTimeTrip = {
+      content: {
+        origin: 'Weston, Fl',
+        destination: 'Miami, Fl',
+        departureTime: '56',
+        userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc',
+        toString: () => JSON.stringify(this)
+      }
+    }
+    // Act
+    let answer = rabbitMqHandlers.getDirections(badDepartureTimeTrip)
+    answer.then(() => {
+      done.error()
+    }, () => {
+      // Assert
+      done()
+    })
   })
 })

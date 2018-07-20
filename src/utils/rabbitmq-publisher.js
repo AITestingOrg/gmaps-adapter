@@ -26,7 +26,6 @@ function publishMessage (exchangeName, routingKey, msg) {
 //     {durable: true, autoDelete: false, internal: false, nowait: false, args: null}
 //   )
 //   ch.publish(exchangeName, routingKey, msgToSend)
-  
 
 //   winston.log('info', 'Published message:' + msg.toString() + ' to exchange: ' + exchangeName + ' with routingKey: ' + routingKey)
 // }

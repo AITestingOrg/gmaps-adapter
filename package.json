@@ -19,15 +19,24 @@
     "David Giles <david_giles@ultimatesoftware.com>"
   ],
   "license": "MIT",
+  "standard": {
+    "env": [
+      "jasmine"
+    ]
+  },
   "dependencies": {
     "@google/maps": "^0.4.5",
+    "amqp": "^0.2.7",
+    "amqplib": "^0.5.2",
     "eureka-js-client": "^4.4.1",
     "ip": "^1.1.5",
+    "jasmine": "^3.1.0",
     "npm": "^5.7.1",
     "request": "^2.85.0",
     "restify": "^6.3.4",
-    "restify-plugins": "^1.6.0",
-    "winston": "^2.4.1"
+    "reststafy-plugins": "^1.6.0",
+    "winston": "^2.4.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "repository": "github:AITestingOrg/gmaps-adapter",
   "devDependencies": {
