@@ -20,3 +20,7 @@ function publishMessage (exchangeName, routingKey, msg) {
     })
   })
 }
+
+module.exports = {
+  publishMessage: publishMessage
+}
