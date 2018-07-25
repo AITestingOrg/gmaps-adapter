@@ -15,8 +15,8 @@ function publishMessage (exchangeName, routingKey, msg) {
       channelAssertionAndPublishing(ch, exchangeName, routingKey, msgToSend)
     })
   } else {
-  winston.log('info', 'before dialing rabbitmq. Attempting to connect to: amqp://' + rabbitUsername + ':' + rabbitPassword + '@' + rabbitHost + ':5672/')
-  amqp.connect('amqp://' + rabbitUsername + ':' + rabbitPassword + '@' + rabbitHost + ':5672/', function (err, conn) {
+    winston.log('info', `before dialing rabbitmq. Attempting to connect to: amqp://${rabbitUsername}:${rabbitPassword}@${rabbitHost}:5672/`)
+    amqp.connect(`amqp://${rabbitUsername}:${rabbitPassword}@${rabbitHost}:5672/`, function (err, conn) {
     if (err) {
       console.error(err)
       return

@@ -18,8 +18,8 @@ function initializeConsumer (exchangeName, exchangeKind, queueName, queueBinding
   var rabbitPassword = process.env.RABBIT_PASSWORD || 'guest'
   var rabbitHost = process.env.RABBIT_HOST || 'localhost'
 
-  winston.log('info', 'before dialing rabbitmq. Attempting to connect to: amqp://' + rabbitUsername + ':' + rabbitPassword + '@' + rabbitHost + ':5672/')
-  amqp.connect('amqp://' + rabbitUsername + ':' + rabbitPassword + '@' + rabbitHost + ':5672/', function (err, conn) {
+  winston.log('info', `before dialing rabbitmq. Attempting to connect to: amqp://${rabbitUsername}:${rabbitPassword}@${rabbitHost}:5672/`)
+  amqp.connect(`amqp://${rabbitUsername}:${rabbitPassword}@${rabbitHost}:5672/`, function (err, conn) {
     conn.createChannel(function (err, ch) {
       ch.assertExchange(
         exchangeName,
