@@ -1,28 +1,25 @@
 const rabbitMqHandlers = require('../src/handlers/rabbitmq-handlers')
-// Test valid rabbitmq-handlers input
 describe('rabbitmq-handlers', () => {
-  // it('should have valid content', (done) => {
-  //   // Arrange
-  //   const validTrip = {
-  //     content: {
-  //       origin: 'Weston, Fl',
-  //       destination: 'Miami, Fl',
-  //       departureTime: 'now',
-  //       userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
-  //     }
-  //   }
-  //
-  //   validTrip.content.toString = () => JSON.stringify(validTrip.content)
-  //
-  //   // Act
-  //   rabbitMqHandlers.getDirections(validTrip).then(() => {
-  //     done()
-  //   }, () => {
-  //     done(new Error('did not correctly respond to a body with an invalid dest time'))
-  //   })
-  // }, 5000)
+  it('should have valid content', (done) => {
+    // Arrange
+    const validTrip = {
+      content: {
+        origin: 'Weston, Fl',
+        destination: 'Miami, Fl',
+        departureTime: 'now',
+        userID: '560c62f4-8612-11e8-adc0-fa7ae01bbebc'
+      }
+    }
+    validTrip.content.toString = () => JSON.stringify(validTrip.content)
 
-  // Test invalid rabbitmq-handlers input
+    // Act
+    rabbitMqHandlers.getDirections(validTrip).then(() => {
+      done()
+    }, () => {
+      done(new Error('did not correctly respond to a body with an invalid dest time'))
+    })
+  }, 5000)
+
   it('should handle invalid input', (done) => {
     // Arrange
     let invalidTrip = {
@@ -44,7 +41,6 @@ describe('rabbitmq-handlers', () => {
     })
   })
 
-  // Test invalid rabbitmq-handlers input
   it('should handle invalid trip input; doesn\'t conform to model', (done) => {
     // Arrange
     let invalidTrip = {
@@ -59,7 +55,6 @@ describe('rabbitmq-handlers', () => {
     })
   })
 
-  // Test invalid origin rabbitmq-handlers input
   it('should correctly handle invalid origin input', (done) => {
     // Arrange
     const badOriginTrip = {
@@ -81,7 +76,7 @@ describe('rabbitmq-handlers', () => {
       done()
     })
   })
-  // Test invalid destination rabbitmq-handlers input
+
   it('should correctly handle invalid destination', (done) => {
     // Arrange
     const badDestinationTrip = {
@@ -105,7 +100,6 @@ describe('rabbitmq-handlers', () => {
     })
   })
 
-  // Test invalid departureTime rabbitmq-handlers input
   it('should correctly handle invalid departure time', (done) => {
     // Arrange
     const badDepartureTimeTrip = {
