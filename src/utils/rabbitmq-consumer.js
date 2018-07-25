@@ -21,12 +21,12 @@ function initializeConsumer (exchangeName, exchangeKind, queueName, queueBinding
   winston.log('info', `before dialing rabbitmq. Attempting to connect to: amqp://${rabbitUsername}:${rabbitPassword}@${rabbitHost}:5672/`)
   amqp.connect(`amqp://${rabbitUsername}:${rabbitPassword}@${rabbitHost}:5672/`, function (err, conn) {
     if (err) {
-      console.error(err)
+      winston.error(err)
       return
     }
     conn.createChannel(function (err, ch) {
       if (err) {
-        console.error(err)
+        winston.error(err)
         return
       }
       ch.assertExchange(
@@ -39,7 +39,7 @@ function initializeConsumer (exchangeName, exchangeKind, queueName, queueBinding
         {name: queueName, durable: false, autoDelete: true, exclusive: false, nowait: false, args: null},
         function (err, q) {
           if (err) {
-            console.error(err)
+            winston.error(err)
             return
           }
           ch.bindQueue(queueName, exchangeName, queueBinding)
