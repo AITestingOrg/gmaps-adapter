@@ -42,6 +42,7 @@ async function waitReadyAndSubscribe () {
   winston.log('info', 'Waiting for eureka server to be up')
   let eurekaReady = false
   while (!eurekaReady) {
+    winston.log('info', 'Waiting for Eureka: Sleeping 5 seconds')
     await sleep(5000)
     request(url, (error, response, body) => {
       if (!error) {
