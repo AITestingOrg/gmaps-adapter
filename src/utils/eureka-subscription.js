@@ -4,9 +4,8 @@ const ip = require('ip')
 const request = require('request')
 
 const port = process.env.PORT || 8080
-const portBoolean = true
 const addr = ip.address()
-const url = 'http://discoveryservice:8080/eureka/'
+const url = 'http://discoveryservice:8761/eureka/'
 
 const eureka = new Eureka({
   instance: {
@@ -19,7 +18,7 @@ const eureka = new Eureka({
     healthcheckUrl: `http://${addr}:${port}/api/v1/status`,
     port: {
       '$': port,
-      '@enabled': true,
+      '@enabled': true
     },
     vipAddress: addr,
     dataCenterInfo: {
@@ -43,6 +42,7 @@ async function waitReadyAndSubscribe () {
   winston.log('info', 'Waiting for eureka server to be up')
   let eurekaReady = false
   while (!eurekaReady) {
+    winston.log('info', 'Waiting for Eureka: Sleeping 5 seconds')
     await sleep(5000)
     request(url, (error, response, body) => {
       if (!error) {

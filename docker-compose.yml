@@ -1,18 +1,15 @@
 version: '3'
-
 services:
-
   discoveryservice:
-    image: springcloud/eureka
+    image: aista/eureka
     ports:
       - "8761:8761"
-  
   gmaps-adapter:
-    build: ./
     depends_on:
       - discoveryservice
     links:
       - discoveryservice
+    image: aista/gmaps-adapter
     ports:
       - "8080"
     environment:

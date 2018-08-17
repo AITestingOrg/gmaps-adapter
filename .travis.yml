@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 'lts/*'
 before_install:
-- docker-compose -f docker-compose-test.yml up --build -d
+- docker-compose -f docker-compose-local.yml up --build -d
 - echo "Testing Docker Hub credentials"
 - docker -v
 - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
