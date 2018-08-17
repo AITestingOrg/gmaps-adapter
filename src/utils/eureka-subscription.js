@@ -4,8 +4,9 @@ const ip = require('ip')
 const request = require('request')
 
 const port = process.env.PORT || 8080
+const portBoolean = true
 const addr = ip.address()
-const url = 'http://discovery-service:8761/eureka/'
+const url = 'http://discoveryservice:8080/eureka/'
 
 const eureka = new Eureka({
   instance: {
@@ -16,9 +17,13 @@ const eureka = new Eureka({
     homePageUrl: `http://${addr}:${port}`,
     statusPageUrl: `http://${addr}:${port}/api/v1/status`,
     healthcheckUrl: `http://${addr}:${port}/api/v1/status`,
-    port: port,
+    port: {
+      '$': port,
+      '@enabled': true,
+    },
     vipAddress: addr,
     dataCenterInfo: {
+      '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
       name: 'MyOwn'
     }
   },
