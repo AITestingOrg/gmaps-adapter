@@ -2,7 +2,7 @@ const rabbitmqPublisher = require('../utils/rabbitmq-publisher')
 const winston = require('winston')
 const parser = require('../utils/parser.js')
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY'
+  key: 'AIzaSyA-A_VJjmiAKM-xwZpv7RdxDKkV5hzMh4Y'
 })
 
 function describeMessage (msg) {
