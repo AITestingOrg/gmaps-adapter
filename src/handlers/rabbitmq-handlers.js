@@ -2,7 +2,7 @@ const rabbitmqPublisher = require('../utils/rabbitmq-publisher')
 const winston = require('winston')
 const parser = require('../utils/parser.js')
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY'
+  key: 'AIzaSyA-A_VJjmiAKM-xwZpv7RdxDKkV5hzMh4Y'
 })
 
 function describeMessage (msg) {
@@ -25,8 +25,8 @@ function getDirections (msg) {
         if (!err) {
           const parsed = parser.dirResponseParser(response)
           const estimation = {
-            originAddress: trip.origin,
-            destinationAddress: trip.destination,
+            origin: trip.origin,
+            destination: trip.destination,
             distance: parsed.distance,
             duration: parsed.duration,
             userId: trip.userId

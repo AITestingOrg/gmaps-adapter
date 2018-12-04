@@ -1,6 +1,6 @@
 const parser = require('./../utils/parser.js')
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyBrbHj2dKR_VIWZDRGqdMLaq99YP-yHwxY'
+  key: 'AIzaSyA-A_VJjmiAKM-xwZpv7RdxDKkV5hzMh4Y'
 })
 
 const winston = require('winston')
@@ -20,7 +20,7 @@ const directionsMapping = (req, res) => {
       } else {
         const parsedError = parser.dirErrorParser(err)
         winston.log('error', 'directions: ', parsedError)
-        res.send(400, parsedError)
+        res.send(err) // forward original error to client
       }
     }
   )
