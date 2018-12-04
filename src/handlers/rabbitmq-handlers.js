@@ -25,8 +25,8 @@ function getDirections (msg) {
         if (!err) {
           const parsed = parser.dirResponseParser(response)
           const estimation = {
-            originAddress: trip.origin,
-            destinationAddress: trip.destination,
+            origin: trip.origin,
+            destination: trip.destination,
             distance: parsed.distance,
             duration: parsed.duration,
             userId: trip.userId

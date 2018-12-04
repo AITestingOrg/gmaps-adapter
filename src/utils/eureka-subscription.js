@@ -5,7 +5,9 @@ const request = require('request')
 
 const port = process.env.PORT || 8080
 const addr = ip.address()
-const url = 'http://discoveryservice:8761/eureka/'
+const eurekaServer = process.env.EUREKA_SERVER || 'discoveryservice'
+const eurekaPort = process.env.EUREKA_PORT || '8761'
+const url = `http://${eurekaServer}:${eurekaPort}/eureka/`
 
 const eureka = new Eureka({
   instance: {
@@ -27,8 +29,8 @@ const eureka = new Eureka({
     }
   },
   eureka: {
-    host: process.env.EUREKA_SERVER || 'localhost',
-    port: 8761,
+    host: process.env.EUREKA_SERVER || 'discoveryservice',
+    port: process.env.EUREKA_PORT || '8761',
     servicePath: '/eureka/apps/'
   }
 })
